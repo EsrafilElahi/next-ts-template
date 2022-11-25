@@ -2,8 +2,10 @@ import React, { ReactElement, ReactNode } from 'react';
 import Head from 'next/head';
 import type { AppProps } from 'next/app';
 import type { NextPage } from 'next';
-import { Provider } from 'react-redux';
-import { store } from '../redux/store';
+import { Provider, useStore } from 'react-redux';
+import { PersistGate } from 'redux-persist/integration/react';
+import { wrapper } from '../redux/store';
+// import { persistor, store } from '../redux/store'
 import NProgress from 'nprogress';
 import Router from 'next/router';
 import "nprogress/nprogress.css";
@@ -27,14 +29,18 @@ export type NextPropsLayout = AppProps & {
 
 
 function MyApp({ Component, pageProps }: NextPropsLayout) {
+  const store = useStore()
+  console.log('store :', store)
   const getLayout = Component.getLayout ?? ((page) => page)
 
   return (
     <Provider store={store}>
-      {getLayout(<Component {...pageProps} />)}
+      <PersistGate persistor={store.__persistor}>
+        {getLayout(<Component {...pageProps} />)}
+      </PersistGate>
     </Provider>
   )
 
 }
 
-export default MyApp
+export default wrapper.withRedux(MyApp)
