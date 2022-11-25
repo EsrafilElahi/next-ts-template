@@ -57,7 +57,7 @@ export const userSlice = createSlice({
     });
     builder.addCase(getUsers.rejected, (state, action) => {
       state.loading = idle;
-      state.error = action.error
+      state.error = action.error.message
     });
     builder.addCase(getUsers.fulfilled, (state, action) => {
       state.loading = idle;

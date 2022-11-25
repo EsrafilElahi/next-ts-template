@@ -1,3 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#__next {
+  width: 100% !important;
+  height: 100% !important;
+}
+
 html,
 body {
   padding: 0;
@@ -15,12 +24,12 @@ a {
   box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+@layer components {
+  .btn-primary {
+    @apply bg-primary text-white py-2 px-7 rounded cursor-pointer;
   }
-  body {
-    color: white;
-    background: black;
+
+  .input {
+    @apply rounded-md py-2 px-3 outline-0;
   }
 }
