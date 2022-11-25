@@ -7,9 +7,10 @@ import type { NextPageLayout } from './_app'
 const Home: NextPageLayout = () => {
   return (
     <div>
-      <span>
-        nextjs typescript
+      <span className=' text-primary'>
+        nextjs typescript tailwind
       </span>
+      <button className='btn-primary'>btn</button>
 
     </div>
   )
