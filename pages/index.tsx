@@ -22,7 +22,7 @@ const Home: NextPageLayout = () => {
 
   return (
     <div>
-      <span className=' text-primary'>
+      <span className='text-primary'>
         nextjs typescript tailwind
       </span>
       <button className='btn-primary'>btn</button>
