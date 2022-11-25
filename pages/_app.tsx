@@ -1,7 +1,9 @@
-import React, { ReactElement, ReactNode } from 'react'
-import Head from 'next/head'
-import type { AppProps } from 'next/app'
-import type { NextPage } from 'next'
+import React, { ReactElement, ReactNode } from 'react';
+import Head from 'next/head';
+import type { AppProps } from 'next/app';
+import type { NextPage } from 'next';
+import { Provider } from 'react-redux';
+import { store } from '../redux/store';
 import NProgress from 'nprogress';
 import Router from 'next/router';
 import "nprogress/nprogress.css";
@@ -28,11 +30,9 @@ function MyApp({ Component, pageProps }: NextPropsLayout) {
   const getLayout = Component.getLayout ?? ((page) => page)
 
   return (
-    <>
-      {
-        getLayout(<Component {...pageProps} />)
-      }
-    </>
+    <Provider store={store}>
+      {getLayout(<Component {...pageProps} />)}
+    </Provider>
   )
 
 }
