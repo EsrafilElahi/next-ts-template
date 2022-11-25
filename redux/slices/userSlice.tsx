@@ -1,9 +1,9 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 import type { PayloadAction, Draft } from '@reduxjs/toolkit'
+import { HYDRATE } from "next-redux-wrapper";
 import axios from 'axios';
 import { idle, loading } from '../../types/redux'
 import type { TIDLE, TLOADING } from '../../types/redux'
-
 
 export interface UserState {
   users: any[]

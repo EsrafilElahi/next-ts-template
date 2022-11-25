@@ -1,4 +1,5 @@
 import { configureStore, Action, ThunkAction } from '@reduxjs/toolkit';
+
 import counterSlice from './slices/counterSlice'
 import userSlice from './slices/userSlice';
 

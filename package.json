@@ -29,7 +29,9 @@
   "devDependencies": {
     "@babel/core": "^7.20.2",
     "@babel/eslint-parser": "^7.19.1",
+    "@types/next-redux-wrapper": "^3.0.0",
     "@types/nprogress": "^0.2.0",
+    "@types/react-redux": "^7.1.24",
     "babel-eslint": "^10.1.0",
     "babel-plugin-inline-react-svg": "^2.0.1",
     "eslint": "^8.28.0",
