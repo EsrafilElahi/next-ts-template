@@ -7,7 +7,7 @@ const nextConfig = {
   //     {
   //       source: 'register',
   //       destination: `register`,
-  //     },
+  //     }, 
   //     {
   //       source: 'login',
   //       destination: `login`,
